@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ტურისტული კომპანია თბილისში | ევროპული და საზღვარგარეთული ტურები | Travel Lander</title>
+  <meta name="description" content="Travel Lander — ტურისტული კომპანია თბილისში. ევროპული ტურები, დუბაი, მალდივები, ტაილანდი, ზანზიბარი და სხვა მიმართულებები." />
+  <meta name="keywords" content="ტურისტული კომპანია თბილისი, ევროპული ტურები, დუბაი, მალდივები, ტაილანდი, ზანზიბარი, Travel Lander" />
+  <meta name="author" content="Travel Lander" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Travel Lander | ტურისტული კომპანია თბილისში" />
+  <meta property="og:description" content="Travel Lander — ტურისტული კომპანია თბილისში. ევროპული და საზღვარგარეთული ტურები." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200&q=80" />
+  <meta property="og:locale" content="ka_GE" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='50' font-size='48'%3E%E2%9C%88%EF%B8%8F%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --primary: #1877F2; --primary-dark: #0F5FCC; --primary-light: #EAF3FF; --accent: #42A5F5; --white: #FFFFFF; --soft: #F5F9FF; --text: #1C1E21; --muted: #5F6B7A; --dark-bg: #0B2342; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', sans-serif; background: var(--soft); color: var(--text); overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; }
+    nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 100; padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; transition: all 0.4s ease; }
+    nav.scrolled { background: rgba(255,255,255,0.96); backdrop-filter: blur(16px); box-shadow: 0 1px 0 rgba(24,119,242,0.12); padding: 0.9rem 4rem; }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--white); letter-spacing: 0.02em; display: flex; flex-direction: column; line-height: 1; flex-shrink: 0; }
+    .nav-logo span { font-size: 0.65rem; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.85; margin-top: 2px; font-family: 'Outfit', sans-serif; }
+    nav.scrolled .nav-logo { color: var(--primary); }
+    .nav-links { display: flex; gap: 1.6rem; list-style: none; align-items: center; }
+    .nav-links a { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.88); transition: color 0.3s; }
+    nav.scrolled .nav-links a { color: var(--muted); }
+    .nav-links a:hover { color: var(--primary) !important; }
+    .nav-links a.active { color: var(--primary) !important; font-weight: 600; }
+    .nav-cta { background: var(--primary) !important; color: var(--white) !important; padding: 0.55rem 1.2rem; border-radius: 4px; font-weight: 600 !important; }
+    .nav-cta:hover { background: var(--primary-dark) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; z-index: 200; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s; }
+    nav.scrolled .hamburger span { background: var(--primary); }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; inset: 0; background: var(--dark-bg); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 600; color: var(--white); letter-spacing: 0.05em; transition: color 0.3s; }
+    .mobile-menu a:hover { color: var(--accent); }
+    .mobile-menu .mobile-cta { font-family: 'Outfit', sans-serif; font-size: 1rem; background: var(--primary); padding: 0.8rem 2.5rem; border-radius: 4px; margin-top: 1rem; }
+    .hero { height: 100vh; min-height: 720px; position: relative; display: flex; align-items: center; padding: 0 4rem; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: linear-gradient(to right, rgba(11,35,66,0.88) 0%, rgba(11,35,66,0.55) 60%, rgba(11,35,66,0.25) 100%), url('https://miro.medium.com/v2/resize:fit:1400/format:webp/1*aE1KPAFZkjnrTVqH527CWQ.jpeg') center/cover no-repeat; animation: slowZoom 20s ease-in-out infinite alternate; }
+    @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.06); } }
+    .hero-content { position: relative; z-index: 2; max-width: 780px; }
+    .hero-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.8rem; animation: fadeUp 0.6s 0.2s both; }
+    .hero-eyebrow::before { content: ''; width: 2rem; height: 1px; background: var(--accent); }
+    .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 7vw, 6rem); font-weight: 700; line-height: 1.05; color: var(--white); margin-bottom: 1.5rem; animation: fadeUp 0.6s 0.4s both; }
+    .hero-title em { font-style: italic; color: #DDEBFF; }
+    .hero-sub { font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.8); line-height: 1.7; max-width: 480px; margin-bottom: 2.5rem; animation: fadeUp 0.6s 0.6s both; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp 0.6s 0.8s both; }
+    .hero-scroll-hint { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.5); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; animation: fadeUp 0.6s 1.2s both; }
+    .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent); animation: scrollPulse 2s ease-in-out infinite; }
+    @keyframes scrollPulse { 0%, 100% { opacity: 1; transform: scaleY(1); } 50% { opacity: 0.3; transform: scaleY(0.5); } }
+    .btn-gold, .btn-ghost, .btn-primary { padding: 0.85rem 2rem; border-radius: 4px; font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; display: inline-block; transition: all 0.3s; font-weight: 600; cursor: pointer; border: none; }
+    .btn-gold { background: var(--white); color: var(--primary); }
+    .btn-gold:hover { background: var(--primary-light); color: var(--primary-dark); transform: translateY(-3px); box-shadow: 0 8px 25px rgba(24,119,242,0.2); }
+    .btn-ghost { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.45) !important; font-weight: 500; }
+    .btn-ghost:hover { border-color: var(--white) !important; background: rgba(255,255,255,0.08); transform: translateY(-3px); }
+    .btn-primary { background: var(--primary); color: var(--white); }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-3px); box-shadow: 0 8px 25px rgba(24,119,242,0.3); }
+    .stats-bar { background: var(--primary); display: grid; grid-template-columns: repeat(4, 1fr); }
+    .stat-item { padding: 2rem 1.5rem; text-align: center; border-right: 1px solid rgba(255,255,255,0.15); }
+    .stat-item:last-child { border-right: none; }
+    .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 600; line-height: 1; color: var(--white); }
+    .stat-num sup { font-size: 1.2rem; }
+    .stat-label { font-size: 0.75rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.8); margin-top: 0.4rem; }
+    .about { display: grid; grid-template-columns: 1fr 1.1fr; min-height: 580px; }
+    .about-visual { position: relative; overflow: hidden; }
+    .about-visual img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.9s; }
+    .about-visual:hover img { transform: scale(1.04); }
+    .about-badge { position: absolute; bottom: 2rem; right: 0; background: var(--primary); color: var(--white); padding: 1rem 1.6rem; font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 700; }
+    .about-text { background: var(--white); padding: 5rem 4rem; display: flex; flex-direction: column; justify-content: center; }
+    .section-eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.7rem; }
+    .section-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--primary); }
+    .about-text h2, .section-header h2, .cta-content h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 600; line-height: 1.15; color: var(--text); margin-bottom: 1.5rem; }
+    .about-text h2 em, .section-header h2 em, .cta-content h2 em { font-style: italic; color: var(--primary); }
+    .about-text p, .section-header p, .cta-content p, .europe-text p, .exp-card p { font-size: 0.95rem; line-height: 1.8; color: var(--muted); font-weight: 300; margin-bottom: 1rem; }
+    .about-features { display: flex; flex-direction: column; gap: 0.9rem; margin-top: 1.5rem; }
+    .feature-row { display: flex; align-items: center; gap: 1rem; font-size: 0.88rem; color: var(--muted); }
+    .feature-icon { width: 36px; height: 36px; background: var(--primary-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1rem; }
+    .trips { padding: 6rem 4rem; background: var(--soft); }
+    .trips-header-row { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 2rem; gap: 1rem; }
+    .section-header p { max-width: 520px; margin-top: 0.8rem; }
+    .trips-tabs { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .tab-btn { font-family: 'Outfit', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.55rem 1.2rem; border-radius: 20px; border: 1px solid #DDE5EF; background: var(--white); color: var(--muted); cursor: pointer; transition: all 0.25s; }
+    .tab-btn:hover { border-color: var(--primary); color: var(--primary); }
+    .tab-btn.active { background: var(--primary); color: var(--white); border-color: var(--primary); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 1.2rem; }
+    .tab-panel.active .trip-card:first-child { grid-row: span 2; }
+    .trip-card { position: relative; overflow: hidden; border-radius: 6px; background: var(--dark-bg); cursor: pointer; }
+    .trip-card img { width: 100%; height: 100%; object-fit: cover; min-height: 220px; transition: transform 0.7s, opacity 0.5s; opacity: 0.9; }
+    .tab-panel.active .trip-card:first-child img { min-height: 480px; }
+    .trip-card:hover img { transform: scale(1.05); opacity: 0.76; }
+    .trip-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,35,66,0.88) 0%, rgba(11,35,66,0.08) 55%, transparent 100%); }
+    .trip-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; }
+    .trip-tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #DDEBFF; margin-bottom: 0.4rem; }
+    .trip-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--white); line-height: 1.15; }
+    .tab-panel.active .trip-card:first-child .trip-name { font-size: 2.2rem; }
+    .trip-meta { display: flex; gap: 1rem; margin-top: 0.5rem; font-size: 0.78rem; color: rgba(255,255,255,0.75); flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .trip-btn { font-family: 'Outfit', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: var(--primary); color: var(--white); padding: 0.4rem 0.9rem; border-radius: 3px; transition: background 0.3s; white-space: nowrap; }
+    .trip-btn:hover { background: var(--primary-dark); }
+    .trip-arrow { position: absolute; top: 1.2rem; right: 1.2rem; width: 34px; height: 34px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.35); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 0.9rem; opacity: 0; transform: scale(0.8); transition: opacity 0.3s, transform 0.3s; }
+    .trip-card:hover .trip-arrow { opacity: 1; transform: scale(1); }
+    .europe { background: var(--primary-dark); padding: 6rem 4rem; position: relative; overflow: hidden; }
+    .europe::before { content: 'WORLD'; position: absolute; right: -2rem; top: 50%; transform: translateY(-50%); font-family: 'Cormorant Garamond', serif; font-size: 18vw; font-weight: 700; color: rgba(255,255,255,0.04); line-height: 1; pointer-events: none; user-select: none; }
+    .europe-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; position: relative; }
+    .europe-text .section-eyebrow { color: var(--white); }
+    .europe-text .section-eyebrow::before { background: var(--white); }
+    .europe-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 300; line-height: 1.15; color: var(--white); margin-bottom: 1.5rem; }
+    .europe-text h2 em { font-style: italic; color: #DDEBFF; }
+    .europe-text p { color: rgba(255,255,255,0.82); }
+    .europe-cities { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 2rem; }
+    .city-pill { display: flex; align-items: center; gap: 0.6rem; padding: 0.7rem 1rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 6px; font-size: 0.82rem; color: rgba(255,255,255,0.88); transition: all 0.3s; }
+    .city-pill:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.35); color: var(--white); }
+    .europe-imgs { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 0.8rem; height: 460px; }
+    .europe-img-big { grid-row: span 2; overflow: hidden; border-radius: 6px; }
+    .europe-img-sm { overflow: hidden; border-radius: 6px; }
+    .europe-img-big img, .europe-img-sm img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+    .europe-img-big:hover img, .europe-img-sm:hover img { transform: scale(1.05); }
+    .experience { padding: 6rem 4rem; background: var(--primary-light); }
+    .exp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
+    .exp-card { background: var(--white); padding: 2.5rem 2rem; border-radius: 6px; position: relative; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+    .exp-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(to right, var(--primary), var(--accent)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+    .exp-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(24,119,242,0.12); }
+    .exp-card:hover::before { transform: scaleX(1); }
+    .exp-num { position: absolute; top: 1.8rem; right: 2rem; font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 700; color: rgba(24,119,242,0.07); line-height: 1; }
+    .exp-icon { font-size: 2rem; margin-bottom: 1.2rem; }
+    .exp-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--text); margin-bottom: 0.8rem; }
+    .testimonial { background: var(--primary); padding: 6rem 4rem; text-align: center; position: relative; overflow: hidden; }
+    .testimonial::before { content: '\201C'; position: absolute; top: -4rem; left: 50%; transform: translateX(-50%); font-family: 'Cormorant Garamond', serif; font-size: 28rem; font-weight: 700; line-height: 1; color: rgba(255,255,255,0.05); pointer-events: none; }
+    .testimonial-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 300; font-style: italic; color: var(--white); line-height: 1.5; max-width: 780px; margin: 0 auto 2rem; position: relative; }
+    .testimonial-author { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #DDEBFF; }
+    .cta-section { display: grid; grid-template-columns: 1fr 1fr; min-height: 520px; }
+    .cta-visual { position: relative; overflow: hidden; }
+    .cta-visual img { width: 100%; height: 100%; object-fit: cover; }
+    .cta-visual::after { content: ''; position: absolute; inset: 0; background: rgba(24,119,242,0.3); }
+    .cta-content { background: var(--white); padding: 4rem; display: flex; flex-direction: column; justify-content: center; }
+    .contact-form { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+    .form-group input, .form-group textarea, .form-group select { padding: 0.75rem 1rem; border: 1px solid #DDE5EF; border-radius: 4px; font-family: 'Outfit', sans-serif; font-size: 0.9rem; color: var(--text); background: var(--soft); transition: border-color 0.3s, box-shadow 0.3s; outline: none; }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(24,119,242,0.1); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    footer { background: var(--primary-dark); padding: 5rem 4rem 3rem; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 4rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.12); }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 700; color: var(--white); margin-bottom: 0.3rem; }
+    .footer-logo-sub { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 1.2rem; }
+    .footer-brand p { font-size: 0.88rem; line-height: 1.75; color: rgba(255,255,255,0.75); font-weight: 300; max-width: 260px; }
+    .footer-social { display: flex; gap: 0.7rem; margin-top: 1.5rem; }
+    .social-btn { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.22); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.85); font-size: 0.75rem; transition: all 0.3s; }
+    .social-btn:hover { border-color: var(--white); color: var(--white); background: rgba(255,255,255,0.08); }
+    .footer-col h3, .footer-col h4 { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.95); margin-bottom: 1.4rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+    .footer-col ul li a { font-size: 0.85rem; color: rgba(255,255,255,0.78); transition: color 0.3s; }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+    .back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 44px; height: 44px; background: var(--primary); color: var(--white); border: none; border-radius: 50%; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(24,119,242,0.35); opacity: 0; transform: translateY(10px); transition: opacity 0.3s, transform 0.3s; z-index: 50; }
+    .back-to-top.visible { opacity: 1; transform: translateY(0); }
+    .back-to-top:hover { background: var(--primary-dark); }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s, transform 0.7s; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.1s; }
+    .reveal-d2 { transition-delay: 0.2s; }
+    .reveal-d3 { transition-delay: 0.3s; }
+    @media (max-width: 1024px) {
+      nav, nav.scrolled { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .hero, .trips, .europe, .experience, .testimonial, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .hero { padding-top: 0; }
+      .about, .cta-section, .europe-inner { grid-template-columns: 1fr; }
+      .about-text, .cta-content { padding: 3.5rem 2rem; }
+      .about-visual { height: 360px; }
+      .stats-bar { grid-template-columns: 1fr 1fr; }
+      .tab-panel.active { grid-template-columns: 1fr 1fr; }
+      .tab-panel.active .trip-card:first-child { grid-column: span 2; grid-row: auto; }
+      .europe-imgs { height: 280px; }
+      .exp-grid { grid-template-columns: 1fr 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .hero { min-height: 620px; }
+      .hero-title { font-size: clamp(2.5rem, 10vw, 4rem); }
+      .trips-header-row { flex-direction: column; align-items: flex-start; }
+      .stats-bar, .europe-cities, .footer-top { grid-template-columns: 1fr; }
+      .tab-panel.active { grid-template-columns: 1fr; }
+      .tab-panel.active .trip-card:first-child { grid-column: auto; }
+      .exp-grid { grid-template-columns: 1fr; }
+      .cta-section { grid-template-columns: 1fr; }
+      .cta-visual { height: 280px; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TravelAgency","name":"Travel Lander","telephone":"+995593250251","address":{"@type":"PostalAddress","streetAddress":"Aleksandre Kazbegi Avenue 12a","addressLocality":"Tbilisi","addressCountry":"GE"}}</script>
+</head>
+<body>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#top" onclick="closeMenu()">მთავარი</a>
+    <a href="#trips" onclick="closeMenu()">ტურები</a>
+    <a href="#europe" onclick="closeMenu()">მიმართულებები</a>
+    <a href="#about" onclick="closeMenu()">ჩვენ შესახებ</a>
+    <a href="#contact" class="mobile-cta" onclick="closeMenu()">კონტაქტი</a>
+  </div>
+  <nav id="nav">
+    <a href="#top" class="nav-logo">Travel Lander<span>თრეველ ლენდერ</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#trips">ტურები</a></li>
+      <li><a href="#europe">მიმართულებები</a></li>
+      <li><a href="#about">ჩვენ შესახებ</a></li>
+      <li><a href="#contact">კონტაქტი</a></li>
+      <li><a href="#contact" class="nav-cta">საკონტაქტო ინფორმაცია</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="მენიუ" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </nav>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">ტურისტული კომპანია · თბილისი</p>
+        <h1 class="hero-title">აღმოაჩინე<br/><em>სამყარო</em><br/>ჩვენთან ერთად</h1>
+        <p class="hero-sub">Travel Lander — ტურისტული კომპანია თბილისში. ევროპა, დუბაი, მალდივები, ტაილანდი, ზანზიბარი და სხვა მიმართულებები.</p>
+        <div class="hero-actions">
+          <a href="#trips" class="btn-gold">იხილე ტურები</a>
+          <a href="#contact" class="btn-ghost">დაგვიკავშირდი</a>
+        </div>
+      </div>
+      <div class="hero-scroll-hint"><div class="scroll-line"></div><span>Scroll</span></div>
+    </section>
+
+    <section class="stats-bar" aria-label="სტატისტიკა">
+      <div class="stat-item reveal"><div class="stat-num">30<sup>+</sup></div><div class="stat-label">მიმართულება</div></div>
+      <div class="stat-item reveal reveal-d1"><div class="stat-num">✈️</div><div class="stat-label">მსოფლიო ტურები</div></div>
+      <div class="stat-item reveal reveal-d2"><div class="stat-num">24/7</div><div class="stat-label">საკონტაქტო წვდომა</div></div>
+      <div class="stat-item reveal reveal-d3"><div class="stat-num">FB</div><div class="stat-label">Facebook გვერდი</div></div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-visual">
+        <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*aE1KPAFZkjnrTVqH527CWQ.jpeg" alt="თბილისი" loading="lazy" />
+        <div class="about-badge">Tbilisi, Georgia 🇬🇪</div>
+      </div>
+      <div class="about-text reveal">
+        <p class="section-eyebrow">ჩვენ შესახებ</p>
+        <h2>Travel Lander — <em>ტურისტული კომპანია</em> თბილისში</h2>
+        <p>Travel Lander არის ტურისტული კომპანია თბილისში, რომელიც მომხმარებელს აწვდის ინფორმაციას ევროპული და საზღვარგარეთული ტურების შესახებ.</p>
+        <p>ჩვენი მიზანია მომხმარებელმა მიიღოს მარტივი, გასაგები და სანდო ინფორმაცია ერთ სივრცეში.</p>
+        <div class="about-features">
+          <div class="feature-row"><div class="feature-icon">🗺️</div><span>ევროპული და საზღვარგარეთული ტურები</span></div>
+          <div class="feature-row"><div class="feature-icon">📍</div><span>Aleksandre Kazbegi Avenue 12a, Tbilisi</span></div>
+          <div class="feature-row"><div class="feature-icon">📞</div><span>ტელეფონი: +995 593 25 02 51</span></div>
+          <div class="feature-row"><div class="feature-icon">💬</div><span>WhatsApp: +995 593 25 02 51</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trips" id="trips">
+      <div class="trips-header-row">
+        <div class="section-header">
+          <p class="section-eyebrow">ყველა მიმართულება</p>
+          <h2>აირჩიე შენი <em>სამოგზაურო მიმართულება</em></h2>
+          <p>ევროპა, ახლო აღმოსავლეთი, ტროპიკული სამოთხე და აფრიკა — ყველა ტური ერთ ადგილას.</p>
+        </div>
+        <a href="#contact" class="btn-primary" style="white-space:nowrap;flex-shrink:0;">კონტაქტი</a>
+      </div>
+
+      <div class="trips-tabs">
+        <button class="tab-btn active" onclick="switchTab('europe-tab', this)">🌍 ევროპა</button>
+        <button class="tab-btn" onclick="switchTab('middle-east-tab', this)">🌅 დუბაი & Qatar</button>
+        <button class="tab-btn" onclick="switchTab('tropical-tab', this)">🌴 მალდივები & ტაილანდი</button>
+        <button class="tab-btn" onclick="switchTab('africa-tab', this)">🦁 ზანზიბარი & ტანზანია</button>
+      </div>
+
+      <div id="europe-tab" class="tab-panel active reveal">
+        <article class="trip-card">
+          <img src="https://www.oktravel.ge/uploads/offers/large/708_2.jpg?v=2" alt="ვენა ავსტრია" loading="lazy" />
+          <div class="trip-overlay"></div>
+          <div class="trip-info">
+            <p class="trip-tag">პოპულარული მიმართულება</p>
+            <h3 class="trip-name">Vienna, Austria</h3>
+            <div class="trip-meta"><span>🗓 5 დღე</span><a href="#contact" class="trip-btn">დეტალები</a></div>
+          </div>
+          <div class="trip-arrow">↗</div>
+        </article>
+        <article class="trip-card">
+          <img src="https://images.unsplash.com/photo-1541849546-216549ae216d?w=800&q=80" alt="პრაღა" loading="lazy" />
+          <div class="trip-overlay"></div>
+          <div class="trip-info">
+            <p class="trip-tag">პოპულარული</p>
+            <h3 class="trip-name">Prague</h3>
+            <div class="trip-meta"><span>🗓 4 დღე</span><a href="#contact" class="trip-btn">დეტალები</a></div>
+          </div>
+          <div class="trip-arrow">↗</div>
+        </article>
+        <article class="trip-card">
+          <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&q=80" alt="პარიზი" loading="lazy" />
+          <div class="trip-overlay"></div>
+          <div class="trip-info">
+            <p class="trip-tag">რომანტიკული</p>
+            <h3 class="trip-name">Paris</h3>
+            <div class="trip-meta"><span>🗓 6 დღე</span><a href="#contact" class="trip-btn">დეტალები</a></div>
+          </div>
+          <div class="trip-arrow">↗</div>
+        </article>
+        <article class="trip-card">
+          <img src="https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=800&q=80" alt="ამსტერდამი" loading="lazy" />
+          <div class="trip-overlay"></div>
+          <div class="trip-info">
+            <p class="trip-tag">City Break</p>
+            <h3 class="trip-name">Amsterdam</h3>
+            <div class="trip-meta"><span>🗓 4 დღე</span><a href="#contact" class="trip-btn">დეტალები</a></div>
+          </div>
+          <div class="trip-arrow">↗</div>
+        </article>
+        <article class="trip-card">
+          <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&q=80" alt="რომი" loading="lazy" />
+          <div class="trip-overlay"></div>
+          <div class="trip-info">
+            <p class="trip-tag">ისტორია</p>
+            <h3 class="trip-name">Rome</h3>
+            <div class="trip-meta"><span>🗓 5 დღე</span><a href="#contact" class="trip-btn">დეტალები</a></div>
+          </div>
+          <div class="trip-arrow">↗</div>
+        </article>
+      </div>
+
+      <div id="middle-east-tab" class="tab-panel">
+        <article class="trip-card">
+          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80" alt="დუბაი" loading="lazy" />
+          <div class="trip-overlay"></div>
+          <div class="trip-info">
+            <p class="trip-tag">ლუქსი მიმართულება</p>
+            <h3 class="trip-name">Dubai, UAE</h3>
+            <div class="trip-meta"><span>🗓 5 დღე</span><a href="#contact" class="trip-btn">დეტალები</a></div>
+          </div>
+          <div class="trip-arrow">↗</div>
+        </article>
+        <article class="trip-card">
+          <img src="https://images.unsplash.com/photo-1607274289413-c9b1ebb0dfd6?w=800&q=80" alt="აბუ დაბი" loading="lazy" />
+          <div class="trip-overlay"></div>
+          <div class="trip-info">
+            <p class="trip-tag">UAE</p>
+            <h3 class="trip-name">Abu Dhabi</h3>
+            <div class="trip-meta"><span>🗓 4 დღე</span><a href="#contact" class="trip-btn">დეტალები</a></div>
+          </div>
+          <div class="trip-arrow">↗</div>
+        </article>
+        <article class="trip-card">
+          <img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=800&q=80" alt="დოჰა" loading="lazy" />
+          <div class="trip-overlay"></div>
+          <div class="trip-info">
+            <p class="trip-tag">Qatar</p>
+            <h3 class="trip-name">Doha</h3>
+            <div class="trip-meta"><span>🗓 4 დღე</span><a href="#contact" class="trip-btn">დეტალები</a></div>
+          </div>
+          <div class="trip-arrow">↗</div>
+        </article>
+        <article class="trip-card">
+          <img src="https://images.unsplash.com/photo-1582672060674-bc2bd808a8b5?w=800&q=80" alt="დუბაი ღამე" loading="lazy" />
+          <div class="trip-overlay"></div>
+          <div class="trip-info">
+            <p class="trip-tag">Dubai Night</p>
+            <h3 class="trip-name">Dubai Marina</h3>
+            <div class="trip-meta"><span>🗓 3 დღე</span><a href="#contact" class="trip-btn">დეტალები</a></div>
+          </div>
+          <div class="trip-arrow">↗</div>
+        </article>
+        <article class="trip-card">
+          <img src="https://images.unsplash.com/photo-1563212034-a3c52118cce2?w=800&q=80" alt="შეიხ ზაიდ" loading="lazy" />
+          <div class="trip-overlay"></div>
+          <div class="trip-info">
+            <p class="trip-tag">კულტურა</p>
+            <h3 class="trip-name">Sheikh Zayed</h3>
+            <div class="trip-meta"><span>🗓 1 დღე</span><a href="#contact" class="trip-btn">დეტალები</a></div>
+          </div>
+          <div class="trip-arrow">↗</div>
+        </article>
+      </div>
+
+      <div id="tropical-tab" class="tab-panel">
+        <article class="trip-card">
+          <img src="https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=800&q=80" alt="მალდივები" loading="lazy" />
+          <div class="trip-overlay"></div>
+          <div class="trip-info">
+            <p class="trip-tag">სამოთხე</p>
+            <h3 class="trip-name">Maldives</h3>
+            <div class="trip-meta"><span>🗓 7 დღე</span><a href="#contact" class="trip-btn">დეტალები</a></div>
+          </div>
+          <div class="trip-arrow">↗</div>
+        </article>
+        <article class="trip-card">
+          <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800&q=80" alt="ტაილანდი" loading="lazy" />
+          <div class="trip-overlay"></div>
+          <div class="trip-info">
+            <p class="trip-tag">აზია</p>
+            <h3 class="trip-name">Thailand</h3>
+            <div class="trip-meta"><span>🗓 8 დღე</span><a href="#contact" class="trip-btn">დეტალები</a></div>
+          </div>
+          <div class="trip-arrow">↗</div>
+        </article>
+        <article class="trip-card">
+          <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80" alt="ბალი" loading="lazy" />
+          <div class="trip-overlay"></div>
+          <div class="trip-info">
+            <p class="trip-tag">ინდონეზია</p>
+            <h3 class="trip-name">Bali</h3>
+            <div class="trip-meta"><span>🗓 7 დღე</span><a href="#contact" class="trip-btn">დეტალები</a></div>
+          </div>
+          <div class="trip-arrow">↗</div>
+        </article>
+        <article class="trip-card">
+          <img src="https://images.unsplash.com/photo-1544550581-5f7ceaf7f992?w=800&q=80" alt="მალდივები წყლქვეშ" loading="lazy" />
+          <div class="trip-overlay"></div>
+          <div class="trip-info">
+            <p class="trip-tag">Diving</p>
+            <h3 class="trip-name">Maldives Reef</h3>
+            <div class="trip-meta"><span>🗓 5 დღე</span><a href="#contact" class="trip-btn">დეტალები</a></div>
+          </div>
+          <div class="trip-arrow">↗</div>
+        </article>
+        <article class="trip-card">
+          <img src="https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=800&q=80" alt="ბანგკოკი" loading="lazy" />
+          <div class="trip-overlay"></div>
+          <div class="trip-info">
+            <p class="trip-tag">ტაილანდი</p>
+            <h3 class="trip-name">Bangkok</h3>
+            <div class="trip-meta"><span>🗓 5 დღე</span><a href="#contact" class="trip-btn">დეტალები</a></div>
+          </div>
+          <div class="trip-arrow">↗</div>
+        </article>
+      </div>
+
+      <div id="africa-tab" class="tab-panel">
+        <article class="trip-card">
+          <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80" alt="ზანზიბარი" loading="lazy" />
+          <div class="trip-overlay"></div>
+          <div class="trip-info">
+            <p class="trip-tag">ოკეანის სამოთხე</p>
+            <h3 class="trip-name">Zanzibar</h3>
+            <div class="trip-meta"><span>🗓 6 დღე</span><a href="#contact" class="trip-btn">დეტალები</a></div>
+          </div>
+          <div class="trip-arrow">↗</div>
+        </article>
+        <article class="trip-card">
+          <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80" alt="ტანზანია" loading="lazy" />
+          <div class="trip-overlay"></div>
+          <div class="trip-info">
+            <p class="trip-tag">საფარი</p>
+            <h3 class="trip-name">Tanzania</h3>
+            <div class="trip-meta"><span>🗓 8 დღე</span><a href="#contact" class="trip-btn">დეტალები</a></div>
+          </div>
+          <div class="trip-arrow">↗</div>
+        </article>
+        <article class="trip-card">
+          <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80" alt="სერენგეტი" loading="lazy" />
+          <div class="trip-overlay"></div>
+          <div class="trip-info">
+            <p class="trip-tag">Serengeti</p>
+            <h3 class="trip-name">Serengeti</h3>
+            <div class="trip-meta"><span>🗓 5 დღე</span><a href="#contact" class="trip-btn">დეტალები</a></div>
+          </div>
+          <div class="trip-arrow">↗</div>
+        </article>
+        <article class="trip-card">
+          <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&q=80" alt="ზანზიბარი სანაპირო" loading="lazy" />
+          <div class="trip-overlay"></div>
+          <div class="trip-info">
+            <p class="trip-tag">Beach</p>
+            <h3 class="trip-name">Zanzibar Beach</h3>
+            <div class="trip-meta"><span>🗓 5 დღე</span><a href="#contact" class="trip-btn">დეტალები</a></div>
+          </div>
+          <div class="trip-arrow">↗</div>
+        </article>
+        <article class="trip-card">
+          <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800&q=80" alt="კილიმანჯარო" loading="lazy" />
+          <div class="trip-overlay"></div>
+          <div class="trip-info">
+            <p class="trip-tag">Adventure</p>
+            <h3 class="trip-name">Kilimanjaro</h3>
+            <div class="trip-meta"><span>🗓 7 დღე</span><a href="#contact" class="trip-btn">დეტალები</a></div>
+          </div>
+          <div class="trip-arrow">↗</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="europe" id="europe">
+      <div class="europe-inner">
+        <div class="europe-text reveal">
+          <p class="section-eyebrow">ყველა მიმართულება</p>
+          <h2>აღმოაჩინე სამყარო<br/><em>Travel Lander-თან ერთად</em></h2>
+          <p>ევროპიდან ტაილანდამდე, დუბაიდან ზანზიბარამდე — ჩვენ ვართ შენი სანდო ტურისტული პარტნიორი.</p>
+          <p>დაგვიკავშირდი და ავაწყოთ შენი სიზმრის მოგზაურობა!</p>
+          <div class="europe-cities">
+            <div class="city-pill">🇦🇹 Vienna</div>
+            <div class="city-pill">🇫🇷 Paris</div>
+            <div class="city-pill">🇦🇪 Dubai</div>
+            <div class="city-pill">🇦🇪 Abu Dhabi</div>
+            <div class="city-pill">🇶🇦 Doha</div>
+            <div class="city-pill">🇹🇭 Thailand</div>
+            <div class="city-pill">🇲🇻 Maldives</div>
+            <div class="city-pill">🇹🇿 Zanzibar</div>
+            <div class="city-pill">🇹🇿 Tanzania</div>
+            <div class="city-pill">🇮🇩 Bali</div>
+            <div class="city-pill">🇨🇿 Prague</div>
+            <div class="city-pill">🇮🇹 Rome</div>
+          </div>
+        </div>
+        <div class="europe-imgs reveal reveal-d2">
+          <div class="europe-img-big">
+            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=700&q=80" alt="დუბაი" loading="lazy" />
+          </div>
+          <div class="europe-img-sm">
+            <img src="https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=600&q=80" alt="მალდივები" loading="lazy" />
+          </div>
+          <div class="europe-img-sm">
+            <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&q=80" alt="ზანზიბარი" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience">
+      <div class="section-header" style="max-width:520px;">
+        <p class="section-eyebrow">რატომ Travel Lander</p>
+        <h2>რატომ ირჩევენ <em>Travel Lander</em></h2>
+        <p>მარტივი, გასაგები და ოპტიმიზებული სერვისი.</p>
+      </div>
+      <div class="exp-grid">
+        <article class="exp-card reveal">
+          <div class="exp-num">01</div>
+          <div class="exp-icon">🌍</div>
+          <h3>30+ მიმართულება</h3>
+          <p>ევროპიდან ტაილანდამდე — ყველა პოპულარული ტურისტული მიმართულება.</p>
+        </article>
+        <article class="exp-card reveal reveal-d1">
+          <div class="exp-num">02</div>
+          <div class="exp-icon">📱</div>
+          <h3>პირდაპირი კონტაქტი</h3>
+          <p>დაგვიკავშირდი ტელეფონით ან WhatsApp-ით პირდაპირ თბილისიდან.</p>
+        </article>
+        <article class="exp-card reveal reveal-d2">
+          <div class="exp-num">03</div>
+          <div class="exp-icon">💎</div>
+          <h3>ინდივიდუალური ტურები</h3>
+          <p>თითოეული ტური მოირგება შენს სურვილებსა და ბიუჯეტზე.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="testimonial">
+      <p class="testimonial-text reveal">"Travel Lander აერთიანებს მარტივ ინფორმაციას, მსოფლიო მიმართულებებს და სწრაფ საკონტაქტო გზებს."</p>
+      <p class="testimonial-author">— Travel Lander</p>
+    </section>
+
+    <section class="cta-section" id="contact">
+      <div class="cta-visual">
+        <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=800&q=80" alt="Travel Lander კონტაქტი" loading="lazy" />
+      </div>
+      <div class="cta-content">
+        <p class="section-eyebrow">საკონტაქტო ინფორმაცია</p>
+        <h2>Travel Lander <em>კონტაქტი</em></h2>
+        <p>გაინტერესებს ტური? შეავსე ფორმა ან დაგვიკავშირდი პირდაპირ.</p>
+        <div class="about-features" style="margin-bottom:1.5rem;">
+          <div class="feature-row"><div class="feature-icon">📞</div><span><strong>ტელეფონი:</strong> <a href="tel:+995593250251" style="color:var(--primary)">+995 593 25 02 51</a></span></div>
+          <div class="feature-row"><div class="feature-icon">💬</div><span><strong>WhatsApp:</strong> <a href="https://wa.me/995593250251" target="_blank" style="color:var(--primary)">+995 593 25 02 51</a></span></div>
+          <div class="feature-row"><div class="feature-icon">📘</div><span><strong>Facebook:</strong> <a href="https://www.facebook.com/travellander/" target="_blank" style="color:var(--primary)">Travel Lander</a></span></div>
+          <div class="feature-row"><div class="feature-icon">📍</div><span><strong>მისამართი:</strong> Aleksandre Kazbegi Ave 12a, Tbilisi</span></div>
+        </div>
+        <form class="contact-form" action="https://formspree.io/f/xlgabnon" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">სახელი</label>
+              <input type="text" id="fname" name="სახელი" placeholder="შენი სახელი" required />
+            </div>
+            <div class="form-group">
+              <label for="fphone">ტელეფონი</label>
+              <input type="tel" id="fphone" name="ტელეფონი" placeholder="+995 5XX XX XX XX" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="fdest">სასურველი მიმართულება</label>
+            <select id="fdest" name="მიმართულება">
+              <option value="">აირჩიე მიმართულება</option>
+              <optgroup label="ევროპა">
+                <option>Vienna, Austria</option>
+                <option>Prague, Czech Republic</option>
+                <option>Paris, France</option>
+                <option>Amsterdam, Netherlands</option>
+                <option>Rome, Italy</option>
+                <option>Barcelona, Spain</option>
+                <option>Berlin, Germany</option>
+                <option>Zurich, Switzerland</option>
+              </optgroup>
+              <optgroup label="ახლო აღმოსავლეთი">
+                <option>Dubai, UAE</option>
+                <option>Abu Dhabi, UAE</option>
+                <option>Doha, Qatar</option>
+              </optgroup>
+              <optgroup label="ტროპიკული">
+                <option>Maldives</option>
+                <option>Thailand</option>
+                <option>Bali, Indonesia</option>
+              </optgroup>
+              <optgroup label="აფრიკა">
+                <option>Zanzibar, Tanzania</option>
+                <option>Tanzania Safari</option>
+              </optgroup>
+              <option>სხვა</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fmsg">შეტყობინება</label>
+            <textarea id="fmsg" name="შეტყობინება" placeholder="მოგვწერე შენი სურვილები..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;font-family:'Outfit',sans-serif;">გაგზავნა →</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">Travel Lander</div>
+        <div class="footer-logo-sub">თრეველ ლენდერ</div>
+        <p>ტურისტული კომპანია თბილისში — ევროპა, დუბაი, მალდივები, ზანზიბარი და სხვა მიმართულებები.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/travellander/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook">f</a>
+          <a href="https://wa.me/995593250251" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp">wa</a>
+          <a href="tel:+995593250251" class="social-btn" aria-label="Phone">☎</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>მიმართულებები</h3>
+        <ul>
+          <li><a href="#trips">Vienna</a></li>
+          <li><a href="#trips">Paris</a></li>
+          <li><a href="#trips">Dubai</a></li>
+          <li><a href="#trips">Maldives</a></li>
+          <li><a href="#trips">Thailand</a></li>
+          <li><a href="#trips">Zanzibar</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>ინფორმაცია</h4>
+        <ul>
+          <li><a href="#about">ჩვენ შესახებ</a></li>
+          <li><a href="#trips">ტურები</a></li>
+          <li><a href="#europe">მიმართულებები</a></li>
+          <li><a href="#contact">კონტაქტი</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>კონტაქტი</h4>
+        <ul>
+          <li><a href="#contact">📍 Kazbegi Ave 12a, Tbilisi</a></li>
+          <li><a href="https://www.facebook.com/travellander/" target="_blank" rel="noopener noreferrer">📘 Facebook: Travel Lander</a></li>
+          <li><a href="tel:+995593250251">📞 +995 593 25 02 51</a></li>
+          <li><a href="https://wa.me/995593250251" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Travel Lander · All rights reserved.</p>
+      <p>Aleksandre Kazbegi Avenue 12a, Tbilisi 🇬🇪</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="მაღლა">↑</button>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+      backToTop.classList.toggle('visible', window.scrollY > 400);
+      updateActiveNav();
+    });
+    function updateActiveNav() {
+      const sections = ['trips', 'europe', 'about', 'contact'];
+      const links = document.querySelectorAll('.nav-links a');
+      let current = '';
+      sections.forEach(id => { const el = document.getElementById(id); if (el && window.scrollY >= el.offsetTop - 120) current = id; });
+      links.forEach(link => { link.classList.remove('active'); if (link.getAttribute('href') === `#${current}`) link.classList.add('active'); });
+    }
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const burger = document.getElementById('hamburger');
+      menu.classList.toggle('open');
+      burger.classList.toggle('open');
+      document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+    }
+    function closeMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const burger = document.getElementById('hamburger');
+      menu.classList.remove('open');
+      burger.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function switchTab(tabId, btn) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      btn.classList.add('active');
+    }
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
